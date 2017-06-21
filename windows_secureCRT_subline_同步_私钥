@@ -1,0 +1,52 @@
+步骤：1
+secureCRT上 创建公钥 得到公钥(xx.pub)和私钥(xx)两个文件  
+2.目标服务器上.ssh下authorized_keys文件中 添加公钥文件(xx.pub)中的值
+http://www.07net01.com/linux/SecureCRT_WinSCP_gongyong_key_pub_miyue_zhuanhuan_ppk_denglussh_18295_1348933144.html
+3.下载puttygen 在conversions中 importkey 导入私钥文件(xx) 通过save plrivate key 生成sp.ppk文件(名字自定义)
+4.在需要同步的目标文件中  sftp-config.json 如下
+{
+    // The tab key will cycle through the settings when first created
+    // Visit http://wbond.net/sublime_packages/sftp/settings for help
+    
+    // sftp, ftp or ftps
+    "type": "sftp",
+
+    "save_before_upload": true,
+    "upload_on_save": true,
+    "sync_down_on_open": false,
+    "sync_skip_deletes": false,
+    "sync_same_age": true,
+    "confirm_downloads": false,
+    "confirm_sync": true,
+    "confirm_overwrite_newer": false,
+    
+    "host": "192.168.75.129",---目标服务器
+    "user": "root",--账号
+    //"password": "",
+    //"port": "22",
+    
+    "remote_path": "/home/lua",
+    "ignore_regexes": [
+        "\\.sublime-(project|workspace)", "sftp-config(-alt\\d?)?\\.json",
+        "sftp-settings\\.json", "/venv/", "\\.svn/", "\\.hg/", "\\.git/",
+        "\\.bzr", "_darcs", "CVS", "\\.DS_Store", "Thumbs\\.db", "desktop\\.ini"
+    ],
+    //"file_permissions": "664",
+    //"dir_permissions": "775",
+    
+    //"extra_list_connections": 0,
+
+    "connect_timeout": 3,
+    //"keepalive": 120,
+    //"ftp_passive_mode": true,
+    //"ftp_obey_passive_host": false,
+    //"ssh_key_file": "~/.ssi/id_rsa",
+    "ssh_key_file": "D:\/sshkey\/sp.ppk",------设置生成的.ppk  此处需要注意配置路径中的反斜杠
+    //"sftp_flags": ["-F", "/path/to/ssh_config"],
+
+    //"preserve_modification_times": false,
+    //"remote_time_offset_in_hours": 0,
+    //"remote_encoding": "utf-8",
+    //"remote_locale": "C",
+    //"allow_config_upload": false,
+}
