@@ -1,7 +1,7 @@
+可参考：http://www.07net01.com/linux/SecureCRT_WinSCP_gongyong_key_pub_miyue_zhuanhuan_ppk_denglussh_18295_1348933144.html
 步骤：1
 secureCRT上 创建公钥 得到公钥(xx.pub)和私钥(xx)两个文件  
 2.目标服务器上.ssh下authorized_keys文件中 添加公钥文件(xx.pub)中的值
-http://www.07net01.com/linux/SecureCRT_WinSCP_gongyong_key_pub_miyue_zhuanhuan_ppk_denglussh_18295_1348933144.html
 3.下载puttygen 在conversions中 importkey 导入私钥文件(xx) 通过save plrivate key 生成sp.ppk文件(名字自定义)
 4.在需要同步的目标文件中  sftp-config.json 如下
 {
@@ -50,3 +50,5 @@ http://www.07net01.com/linux/SecureCRT_WinSCP_gongyong_key_pub_miyue_zhuanhuan_p
     //"remote_locale": "C",
     //"allow_config_upload": false,
 }
+
+
