@@ -1,4 +1,4 @@
-secureCRT “工具”在本地创建公钥和私钥文件  注：xx.pub未公钥文件
+secureCRT “工具”在本地创建公钥和私钥文件  注：xx.pub为公钥文件
 先通过密码登陆服务器  在根目录下.ssh/authorized_keys  这个文件中 添加 公钥内容
 如
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQDQMXhjjbxG/MPwy0UWhyZUtwA1r7w+bEns/E5P3OSjG1/gYUexHYfPlqnfg6P+GpBbonnvwbzw2K6rm1GsxXXS6XhdaU6lDh2iMpSHK2NV/DU4QTYg3XvI5q+FitySGjqOoDs3LV4D2Lm8BHUzLSVZEpM6Q9/qDiW8rn07SpETZQ== xxx@qq.com
